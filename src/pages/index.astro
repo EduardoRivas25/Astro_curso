@@ -2,22 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="SpaceX Launches">
-	<main class="bg-gradient-to-br from-black via-sky-950 to-sky-600 flex-col">
-		<Header />
+	<main class="min-h-screen flex flex-col">
+		<div
+			class="flex-grow w-full flex flex-col bg-[url('/fondoespacial.webp')] bg-cover bg-center bg-no-repeat"
+		>
+			<Header />
+			<div class="flex-grow flex items-center justify-center w-full">
+				<Hero />
+			</div>
+		</div>
 		<Footer />
 	</main>
 </Layout>
 
-<style>
-	main {
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
+<style></style>
