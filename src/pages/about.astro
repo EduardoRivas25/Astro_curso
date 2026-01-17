@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About">
-    <main>
+<Layout title="about">
+    <div class="flex flex-col gap-4 justify-center items-center">
         <h1 class="text-5xl font-bold">Sobre Nosotros</h1>
-        <p class="text-gray-500">
+        <p class="text-gray-400 text-lg text-center inter-italic">
             Somos un equipo de entusiastas de SpaceX que nos apasiona la
             tecnología espacial y los avances que SpaceX está haciendo para la
             humanidad.
         </p>
-    </main>
+        <img src="/starlink2.webp" alt="SpaceX" class="w-[500px] h-auto" />
+    </div>
 </Layout>
