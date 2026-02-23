@@ -16,15 +16,29 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={`Lanzamiento ${id}`}>
-    <article class="flex flex-col gap-4 justify-center">
+    <article class="flex flex-col gap-4 justify-center items-center">
         <img
             class="w-52 h-auto"
             src={launch?.links.patch.small}
             alt={launch?.name}
         />
-        <h2 class="text-4xl text-white font-bold">
-            Launch #{launch?.flight_number}
-        </h2>
+        <div class="flex items-center gap-4">
+            <h3 class="text-2xl text-white/70 font-bold">
+                Launch #{launch?.flight_number}
+            </h3>
+            <span
+                class:list={[
+                    "text-xs font-semibold mr-2 px-2.5 py-0.5 rounded",
+                    {
+                        "bg-green-400 text-green-900": launch?.success,
+                        "bg-red-400 text-red-900": !launch?.success,
+                    },
+                ]}
+            >
+                {launch?.success ? "Success" : "Failed"}
+            </span>
+        </div>
+        <h1 class="text-4xl text-white font-bold">{launch?.name}</h1>
         <p class="text-lg">{launch?.details}</p>
     </article>
 </Layout>

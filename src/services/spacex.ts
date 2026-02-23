@@ -1,4 +1,5 @@
 import { type Doc, type APISpaceXResponse } from "../types/api";
+
 export const getLaunchById = async ({ id }: { id: string }) => {
     const res = await fetch(`https://api.spacexdata.com/v5/launches/${id}`);
     const launch = (await res.json()) as Doc;
